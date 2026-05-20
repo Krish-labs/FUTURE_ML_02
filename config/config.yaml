@@ -1,0 +1,19 @@
+paths:
+  raw_data: "data/raw/Customer_ChurnDataset.csv"
+  processed_data: "data/processed/"
+  figures_path: "reports/figures/"
+  preprocessor_path: "models/preprocessor.joblib"
+  model_output: "models/churn_model.joblib"
+  predictions_output: "data/processed/customer_churn_predictions.csv"
+
+data_params:
+  target_column: "Churn"
+  test_size: 0.2
+  random_state: 42
+  drop_columns: ["customerID"]
+
+model_params:
+  xgb:
+    n_estimators: [100, 200]
+    max_depth: [3, 5, 7]
+    learning_rate: [0.01, 0.1, 0.2]
